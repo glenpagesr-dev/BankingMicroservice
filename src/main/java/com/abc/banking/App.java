@@ -24,6 +24,8 @@ public class App {
                 respond(exchange, "Banking Microservice v" + VERSION + " is running"));
         server.createContext("/health", exchange ->
                 respond(exchange, "{\"status\":\"" + healthStatus() + "\"}"));
+        server.createContext("/accounts/demo", exchange ->
+                respond(exchange, accountSummary()));
 
         server.start();
         System.out.println("Banking Microservice started on port " + port);
@@ -31,6 +33,11 @@ public class App {
 
     static String healthStatus() {
         return "UP";
+    }
+
+    static String accountSummary() {
+        return "{\"accountId\":\"ACC-1001\",\"owner\":\"Demo Customer\","
+                + "\"balance\":\"2500.00\",\"currency\":\"USD\"}";
     }
 
     static BigDecimal deposit(BigDecimal balance, BigDecimal amount) {
