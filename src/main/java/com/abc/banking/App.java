@@ -14,7 +14,7 @@ import java.nio.charset.StandardCharsets;
  */
 public class App {
 
-    static final String VERSION = "1.1";
+    static final String VERSION = "1.2";
 
     public static void main(String[] args) throws IOException {
         int port = Integer.parseInt(System.getenv().getOrDefault("PORT", "8080"));
