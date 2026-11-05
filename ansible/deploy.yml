@@ -1,0 +1,42 @@
+- name: Deploy Banking Microservice
+  hosts: production
+  become: true
+  vars:
+    container_name: bankingmicroservice
+    image: glentp/bankingmicroservice:latest
+  tasks:
+    - name: Pull the requested image
+      ansible.builtin.command: docker pull {{ image }}
+      changed_when: true
+
+    - name: Stop and remove the old container
+      ansible.builtin.command: docker rm -f {{ container_name }}
+      register: rm_result
+      failed_when: false
+      changed_when: rm_result.rc == 0
+
+    - name: Run the new container
+      ansible.builtin.command: >
+        docker run -d --name {{ container_name }}
+        --restart unless-stopped
+        -p 127.0.0.1:8080:8080
+        {{ image }}
+      changed_when: true
+
+    - name: Verify the application through Apache
+      ansible.builtin.uri:
+        url: http://localhost/health
+        status_code: 200
+        return_content: true
+      register: health
+      retries: 10
+      delay: 3
+      until: health.status == 200
+
+    - name: Show health response
+      ansible.builtin.debug:
+        msg: "Health check: {{ health.content }}"
+
+    - name: Remove unused images
+      ansible.builtin.command: docker image prune -f
+      changed_when: false

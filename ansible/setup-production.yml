@@ -1,0 +1,62 @@
+- name: Prepare production server
+  hosts: production
+  become: true
+  tasks:
+    - name: Install Java, Docker, and Apache
+      ansible.builtin.apt:
+        name:
+          - openjdk-21-jre-headless
+          - docker.io
+          - apache2
+        state: present
+        update_cache: true
+
+    - name: Start and enable Docker and Apache on boot
+      ansible.builtin.service:
+        name: "{{ item }}"
+        state: started
+        enabled: true
+      loop:
+        - docker
+        - apache2
+
+    - name: Enable Apache reverse-proxy modules
+      ansible.builtin.command: a2enmod proxy proxy_http
+      register: a2enmod_result
+      changed_when: "'Enabling' in a2enmod_result.stdout"
+      notify: Restart Apache
+
+    - name: Deploy reverse-proxy site config
+      ansible.builtin.copy:
+        src: files/bankingmicroservice.conf
+        dest: /etc/apache2/sites-available/000-default.conf
+        mode: "0644"
+      notify: Restart Apache
+
+    - name: Verify Java version
+      ansible.builtin.command: java -version
+      register: java_ver
+      changed_when: false
+
+    - name: Verify Docker version
+      ansible.builtin.command: docker --version
+      register: docker_ver
+      changed_when: false
+
+    - name: Verify Apache status
+      ansible.builtin.command: systemctl is-active apache2
+      register: apache_status
+      changed_when: false
+
+    - name: Show verification results
+      ansible.builtin.debug:
+        msg:
+          - "Java: {{ java_ver.stderr_lines[0] }}"
+          - "Docker: {{ docker_ver.stdout }}"
+          - "Apache: {{ apache_status.stdout }}"
+
+  handlers:
+    - name: Restart Apache
+      ansible.builtin.service:
+        name: apache2
+        state: restarted
