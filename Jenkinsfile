@@ -5,6 +5,7 @@ pipeline {
 
     options {
         skipDefaultCheckout()
+        disableConcurrentBuilds()
         buildDiscarder(logRotator(numToKeepStr: '10'))
     }
 
@@ -82,6 +83,22 @@ pipeline {
                         docker push $IMAGE_NAME:latest
                         docker logout
                     '''
+                }
+            }
+        }
+        stage('Ansible: Configure Production') {
+            when { expression { currentBuild.currentResult == 'SUCCESS' } }
+            steps {
+                dir('ansible') {
+                    sh 'ansible-playbook setup-production.yml'
+                }
+            }
+        }
+        stage('Deploy to Production') {
+            when { expression { currentBuild.currentResult == 'SUCCESS' } }
+            steps {
+                dir('ansible') {
+                    sh 'ansible-playbook deploy.yml -e image=$IMAGE_NAME:$IMAGE_TAG'
                 }
             }
         }
