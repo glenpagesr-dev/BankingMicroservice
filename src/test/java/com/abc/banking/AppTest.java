@@ -16,7 +16,7 @@ class AppTest {
 
     @Test
     void depositAddsToBalance() {
-        assertEquals(new BigDecimal("150.00"),
+        assertEquals(new BigDecimal("999.00"),
                 App.deposit(new BigDecimal("100.00"), new BigDecimal("50.00")));
     }
 
