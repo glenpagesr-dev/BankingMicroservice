@@ -843,43 +843,43 @@ Console Output: ${BUILD_URL}console"""
 
 ### 1. GitHub Branch Strategy & Commit History
 
-![Branch Strategy](screenshots/branch-strategy.png)
+![Branch Strategy](https://github.com/glenpagesr-dev/BankingMicroservice/blob/master/04-git-graph.png)
 
 *Screenshot pending.* Demonstrates **source control discipline** — independent developer branches, reviewed pull requests, and a complete audit trail of every change merged into `master`.
 
 ### 2. Maven Build & JUnit Results
 
-![Maven Build](screenshots/maven-build.png)
+![Maven Build](https://github.com/glenpagesr-dev/BankingMicroservice/blob/master/04-maven-build.png)
 
 *Screenshot pending.* Demonstrates **build automation** — dependencies resolved, code compiled, tests executed, and `BankingMicroservice.jar` produced with zero manual steps.
 
 ### 3. Jenkins Pipeline Stage View
 
-![Jenkins Pipeline](screenshots/jenkins-pipeline.png)
+![Jenkins Pipeline](https://github.com/glenpagesr-dev/BankingMicroservice/blob/master/07unstable-build.png)
 
 *Screenshot pending.* Demonstrates **continuous integration** — every stage from checkout to deployment visible in one view, with failures stopping the pipeline before they reach production.
 
 ### 4. Versioned Docker Images
 
-![Docker Images](screenshots/docker-images.png)
+![Docker Images](https://github.com/glenpagesr-dev/BankingMicroservice/blob/master/06-dockerhub-versions.png)
 
 *Screenshot pending.* Demonstrates **release versioning** — each build produces a uniquely tagged image in Docker Hub, enabling traceability and rollback.
 
 ### 5. Failure Email Notification
 
-![Email Notification](screenshots/email-notification.png)
+![Email Notification](https://github.com/glenpagesr-dev/BankingMicroservice/blob/master/07-fixed-email.png07-fixed-email.png)
 
 *Screenshot pending.* Demonstrates **fast feedback** — developers receive the project name, build number, status, and console link the moment a build fails.
 
 ### 6. Ansible Playbook Run
 
-![Ansible Run](screenshots/ansible-run.png)
+![Ansible Run](https://github.com/glenpagesr-dev/BankingMicroservice/blob/master/08-ansible-setup.png)
 
 *Screenshot pending.* Demonstrates **configuration management** — Java, Docker, and Apache installed, started, enabled on boot, and verified on the production server automatically.
 
 ### 7. Application Running in Production
 
-![Production Deployment](screenshots/production-deployment.png)
+![Production Deployment](https://github.com/glenpagesr-dev/BankingMicroservice/blob/master/09-prod-docker-ps.png)
 
 *Screenshot pending.* Demonstrates **automated deployment** — the latest container running on the production EC2 instance and reachable through Apache.
 
