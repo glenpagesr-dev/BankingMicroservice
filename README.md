@@ -1008,38 +1008,37 @@ sudo -u jenkins ansible-playbook deploy.yml -e image=glentp/bankingmicroservice:
 
 ### 1. GitHub Branch Strategy & Commit History
 
-![Branch Strategy](screenshots/branch-strategy.png)
+![Branch Strategy](https://github.com/glenpagesr-dev/BankingMicroservice/blob/master/04-git-graph.png)
 
 Demonstrates **source control discipline** — independent developer branches, reviewed pull requests, and a complete audit trail of every change merged into `master`.
 
 ### 2. Maven Build & JUnit Results
 
-![Maven Build](screenshots/maven-build.png)
+![Maven Build](https://github.com/glenpagesr-dev/BankingMicroservice/blob/master/04-maven-build.png)
 
 Demonstrates **build automation** — dependencies resolved, code compiled, 5 tests executed, and `BankingMicroservice.jar` produced with zero manual steps.
 
 ### 3. Jenkins Pipeline Stage View
 
-![Jenkins Pipeline](screenshots/jenkins-pipeline.png)
+![Jenkins Pipeline](https://github.com/glenpagesr-dev/BankingMicroservice/blob/master/07unstable-build.png)
 
 Demonstrates **continuous integration and delivery** — every stage from checkout to production deployment, triggered automatically by a GitHub push, with failures stopping the pipeline before they reach production.
 
 ### 4. Versioned Docker Images
 
-![Docker Images](screenshots/docker-images.png)
+![Docker Images](https://github.com/glenpagesr-dev/BankingMicroservice/blob/master/06-dockerhub-versions.png)
 
 Demonstrates **release versioning** — each build produces a uniquely tagged image in Docker Hub, enabling traceability and rollback. `v6` is intentionally missing: that build failed a unit test, so the pipeline never published it.
 
 ### 5. Failure Email Notification
 
-![Email Notification](screenshots/email-notification.png)
+![Email Notification](https://github.com/glenpagesr-dev/BankingMicroservice/blob/master/07-failure-email.png.png)
 
 Demonstrates **fast feedback** — developers receive the project name, build number, status, Jenkins URL, and console link the moment a build fails or becomes unstable.
 
 ### 6. Ansible Playbook Run
 
-![Ansible Run](screenshots/ansible-run.png)
-![Ansible Idempotent Run](screenshots/ansible-idempotent.png)
+![Ansible Run](https://github.com/glenpagesr-dev/BankingMicroservice/blob/master/08-ansible-setup.png)
 
 Demonstrates **configuration management** — Java, Docker, and Apache installed, started, enabled on boot, and verified on the production server automatically. A second run reports `changed=0`, proving the playbook is **idempotent**.
 
