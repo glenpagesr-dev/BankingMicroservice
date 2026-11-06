@@ -867,7 +867,7 @@ Console Output: ${BUILD_URL}console"""
 
 ### 5. Failure Email Notification
 
-![Email Notification](https://github.com/glenpagesr-dev/BankingMicroservice/blob/master/07-fixed-email.png07-fixed-email.png)
+![Email Notification](https://github.com/glenpagesr-dev/BankingMicroservice/blob/master/07-failure-email.png.png)
 
 *Screenshot pending.* Demonstrates **fast feedback** — developers receive the project name, build number, status, and console link the moment a build fails.
 
