@@ -1089,7 +1089,7 @@ Demonstrates **recoverability** — production rolled back from v1.2 to v1.1 by 
 
 ## 👤 Author
 
-**Glen Page** — CompTIA Security+ certified, building toward a DevOps Engineer role, with hands-on Microsoft Azure experience and CI/CD pipeline project work using Jenkins, Docker, and Ansible.
+**Glen Page** — CompTIA Security+ certified, building toward a DevOps Engineer role, with hands-on Microsoft AZure / AWS experience and CI/CD pipeline project work using Jenkins, Docker, and Ansible.
 
 - GitHub: [@glenpagesr-dev](https://github.com/glenpagesr-dev)
 - LinkedIn: [glen-page-862730246](https://www.linkedin.com/in/glen-page-862730246)
