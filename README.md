@@ -11,7 +11,7 @@
 
 ---
 
-## 📺 [Watch Me Build the Project Here](YOUR_LOOM_LINK)
+## 📺 [WATCH ME BUILD THE PROJECT HERE](https://www.loom.com/share/45bd23a4b84b4b42934335dd72f10ecc)
 
 > 🔗 A full walkthrough: infrastructure, pipeline build-out, a deliberate test failure, a live production deployment, and a one-command rollback.
 
