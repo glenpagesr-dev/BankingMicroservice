@@ -1044,14 +1044,13 @@ Demonstrates **configuration management** — Java, Docker, and Apache installed
 
 ### 7. Application Running in Production
 
-![Production Deployment](screenshots/production-deployment.png)
-![Production Container](screenshots/production-container.png)
+![Production Container](https://github.com/glenpagesr-dev/BankingMicroservice/blob/master/09-prod-docker-ps.png)
 
 Demonstrates **automated deployment** — the latest container (`v11`) running on the production EC2 instance and reachable through Apache on port 80. The container is bound to `127.0.0.1`, so all public traffic must go through Apache.
 
 ### 8. One-Command Rollback
 
-![Rollback](screenshots/rollback.png)
+![Rollback](https://github.com/glenpagesr-dev/BankingMicroservice/blob/master/09-rollback.png)
 
 Demonstrates **recoverability** — production rolled back from v1.2 to v1.1 by redeploying a previous image tag with the same playbook.
 
