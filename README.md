@@ -11,7 +11,7 @@
 
 ---
 
-## 📺 [Watch Me Build the Project Here](#)
+## 📺 [Watch Me Build the Project Here](https://www.loom.com/share/45bd23a4b84b4b42934335dd72f10ecc)
 
 > 🔗 *Walkthrough video link will be added once the project is complete.*
 
